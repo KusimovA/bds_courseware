@@ -1,4 +1,8 @@
+import tempfile
+
+import gdown
 import pandas as pd
+
 from bds_courseware.const import DATASETS
 
 
@@ -6,27 +10,34 @@ def print_dataset_description(dataset_name):
     pass
 
 
-def read_drive_dataset(file_id, data_type="csv"):
-    if data_type == "tsv":
+def print_module_datasets(module_num):
+    pass
+
+
+def read_drive_dataset(file_id, data_format="csv"):
+    if data_format == "tsv":
         return pandas_read_drive_csv(file_id, sep="\t")
-    if data_type == "tsv.gz":
+    if data_format == "tsv.gz":
         return pandas_read_drive_csv(file_id, sep="\t", compression="gzip")
-    if data_type == "csv":
-        return pandas_read_drive_csv(file_id)
-    if data_type == "csv.gz":
-        return pandas_read_drive_csv(file_id, compression="gzip")
-    if data_type == "ssv":
+    if data_format == "csv":
+        return pandas_read_drive_csv(file_id, sep=",")
+    if data_format == "csv.gz":
+        return pandas_read_drive_csv(file_id, sep=",", compression="gzip")
+    if data_format == "ssv":
         return pandas_read_drive_csv(file_id, sep=";")
-    if data_type == "ssv.gz":
+    if data_format == "ssv.gz":
         return pandas_read_drive_csv(file_id, sep=";", compression="gzip")
 
 
 def pandas_read_drive_csv(file_id, **read_csv_args):
     download_link = f"https://drive.google.com/uc?export=download&id={file_id}"
     try:
-        return pd.read_csv(download_link, **read_csv_args)
+        return pd.read_csv(download_link, low_memory=False, **read_csv_args)
     except pd.errors.ParserError:
-        raise IOError("Data source is not shared to everyone, check access rights on Google Drive")
+        with tempfile.TemporaryFile("w+b") as tmp_file:
+            gdown.download(download_link, tmp_file)
+            tmp_file.seek(0)
+            return pd.read_csv(tmp_file, low_memory=False, **read_csv_args)
 
 
 def get_stock_data(name):

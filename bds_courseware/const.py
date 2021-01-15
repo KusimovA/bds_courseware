@@ -1,27 +1,42 @@
-DATASETS = {
-    ### 'name': ('id', 'format'),
+MODULE_DATASETS_LIST = [
+    ["msft_store"],
+    ["bank"],
+    ["sweets", "suicide_rates", "car_perfs", "brain"],
+    ["air_quality"],
+    ["hypothyroid"],
+    ["movies"],
+]
+
+MODULE_DATASETS = {
+    "be": ["msft_store"],
+    "eda": ["bank"],
+    "stats": ["sweets", "suicide_rates", "car_perfs", "brain"],
+    "reg": ["air_quality"],
+    "cls1": ["hypothyroid"],
+    "cls2": ["movies"],
+}
+
+WORKSHOP_DATASETS = {
     # BE
     "msft_store": ("15mCEE_6GfUXBMLh58zhOYBp6Gfti7TOq", "csv"),
     # STATS
     "sweets": ("1rD-yCS4CJ2qkeBgL-f3ilahatb8pZq2G", "csv"),
-    "master": ("1fhUu_t9C7yqVuMXeqjadFFzEzAdfwgiT", "csv"),
+}
+
+HOMEWORK_DATASETS = {
+    # STATS
+    "suicide_rates": ("1fhUu_t9C7yqVuMXeqjadFFzEzAdfwgiT", "csv"),
     "car_perfs": ("1WCNKNxbTyR0DkE4wk9fKl7C9tVaTA7Al", "tsv"),
     "brain": ("1tpZxfubFR0QT-pvLEjs34_A77VR7uIhC", "tsv"),
     # EDA
-    "cwur": ("19Q0suXlfLuWrklmhx_hvQeOAnKC5GOEe", "csv"),
-    "edu_expenditure": ("1_srtnVijt6R8SZKMY4pNb_VMbfc-2DAd", "csv"),
-    "edu_attainment": ("1W9PKdqYHLVz_z0nKJOB-w1crJvCHOBky", "csv"),
-    "school_and_country": ("1erNL48vR68e1794kHPGP4GRpA-ZlJ5At", "csv"),
-    "shanghai": ("1kCF2EJuOyfUAOkQBmUdo39ZLKCgx2RyH", "csv"),
-    "times": ("1tDf8pJTCHhdcLsnCvDnefX-q1oz1tVLQ", "csv"),
-    "bank_full": ("1mCPUi9nHDHAfHGYf0oi-tnhbkCGTb_Mg", "ssv"),
-    "bank_prep_full": ("15hKFhmB71WwTdqNF5_29TPsqW5PyGa50", "csv.gz"),
+    "bank": ("1mCPUi9nHDHAfHGYf0oi-tnhbkCGTb_Mg", "ssv"),
+    # "bank_for_dr": ("15hKFhmB71WwTdqNF5_29TPsqW5PyGa50", "csv.gz"),
     # REG1
     "air_quality": ("1Cf1oA7L9UM2B7HemJ9gFbr9IAgHquyfT", "ssv"),
     # CLS1
     "hypothyroid": ("1m53GMGvefv99ZeTOuhjb5wLkTSwfMTCf", "csv"),
     # CLS2
-    "movie": ("14TaFIFoslOAAljV2uj5rU9biAuocKScX", "csv"),
+    "movies": ("1ZyCVwksXfp03H4X8wOye6vRD3B3O2YFl", "csv"),
     # REG2
     "day": ("1KWMuDmPznwEF5317-yhCdYxjnxFWeFbq", "csv"),
     "hour": ("1p4azCzZlFR5KZNVa4bG-LrZZtx0lPds1", "csv"),
@@ -29,56 +44,4 @@ DATASETS = {
     "duq": ("1NTkHmJ5BAgXEMqYok4dLD7FwLGv3bpDK", "csv.zip"),
     "stock": ("14m4swWIB6hEq7U71YJhaF5-T6mxt9obW", "csv"),
 }
-_stock_parts = {
-    "ADANIPORTS": "1fJdKXbRT7WkpUuGt_VW0GQDFGlEATfa6",
-    "ASIANPAINT": "1D_PifSNsErVLPFfWgHpTJlb8bZjt4_pP",
-    "AXISBANK": "1gKXG-8JGSOoj58KPTGSw-EUotJF8NLAC",
-    "BAJAJ-AUTO": "1gVwWAeyE6Ldky-HyNsfNp84NWqpJ7Acg",
-    "BAJAJFINSV": "1fiZk2c-3LVqMsS7GwoJ2a73VP_w--6wJ",
-    "BAJFINANCE": "16im0YoBO1yU03XqAwDvXkuzj73dhmJgK",
-    "BHARTIARTL": "1QrIrj6-11F7XFb8DHJ1MmyogdZalc0tI",
-    "BPCL": "1Z_amQMTk7jZMmcfbI9VEaqOvjFDTh9zB",
-    "BRITANNIA": "17VxdqDVkFJ1vsJF3Jne54rikzapDH5Wh",
-    "CIPLA": "1X_OukQ57KWx7R1WoordkZDgPuqfA4vJ8",
-    "COALINDIA": "1GtEEvfk3te3j7a6O979MUPyVAKP8TLU-",
-    "DRREDDY": "1J_APP9ogLZ0IsEkUi3PwEgbfKrfysEJA",
-    "EICHERMOT": "1GQXlrz8DLJx6TBre-4_hyC3JF5YRJeJj",
-    "GAIL": "1G1Ie1nB8diXi1G5IGl3FofccBa51jBY-",
-    "GRASIM": "1fJ4yO44m_gVp_e-3A40uX3NP4T-VVH-3",
-    "HCLTECH": "1vQekVux0XVwCQXgmLMuM6bgsgx7biCqP",
-    "HDFC": "1VcOtkld6sxxZ_2LZiB9fHtcoEHfj7mMj",
-    "HDFCBANK": "1772w8Lczx6nkiG2dxcvi4VMCTYvv7Ebt",
-    "HEROMOTOCO": "1NWxJydQMQWrx0iswy4ByhLYzY4rPKk_Q",
-    "HINDALCO": "1xxEZGuo25SIR1qGTroDuy0d2nQINniuu",
-    "HINDUNILVR": "1Pg-jeXjEPpTTOY84yU9kcLEr4VxvMBKj",
-    "ICICIBANK": "1bAAZSu8oWBh36L8BcVu63eA4Iu9xbHY9",
-    "INDUSINDBK": "1PKubXYlibHHphzSD7OATvioUOdkOhIcJ",
-    "INFRATEL": "1nJpJW3sunN-_qJ_zgRN3M9V_Akc1RnoD",
-    "INFY": "109x4eP4fHFqte0YPuYkhwgGhzOpcQ5fy",
-    "IOC": "1ZeBkkzdI5FhAls2RKi2CzISRFzfuHBkn",
-    "ITC": "1wJDkO7F8eOAOdFBtZnxfltY9WodUGYLL",
-    "JSWSTEEL": "1I9vhca4n7Cc8TIOGP2JgZ5NWgJ7Rx7Dy",
-    "KOTAKBANK": "1oLlSHpO7xB06XJEAoLPVQKeqIPuQCcY_",
-    "LT": "1NYSJkFdNyLev7ehx0Q7CbNhGuHd_wJZm",
-    "MARUTI": "1uGSnA1rW2QTrIn7FUTr3SucH571T2aIY",
-    "MM": "12drw72KtYErpDg1AKfTttPOfenL2HgdE",
-    "NESTLEIND": "1lnZvg8p86NafjGf9Eg6Z5-mX1L437DPa",
-    "NIFTY50_all": "1hosPXRslTginInIhgW_DtOO65_ca1ks_",
-    "NTPC": "1bdSn54Nx8xlI_u9UPQKz3hO2D6dI2uVZ",
-    "ONGC": "1WQXNUpN1cekH4gw6Yu45Pd5Lwx-O3Yfz",
-    "POWERGRID": "1bZz_plg0DiFP567n1yDBvlpMly8wp8yF",
-    "RELIANCE": "1vdDu7-Pcg6Vm8CJKhvVXNWhMAL3ZlOrg",
-    "SBIN": "1Rwb7Blurbvb5kE8SX48WCGzxvHTuotxa",
-    "SHREECEM": "1TFEIeBsfM9XUA0qr7HrUDPzuD_PJpu9t",
-    "SUNPHARMA": "110vwoDwYsQNy0TW1EUT4FipBqZVorTL3",
-    "TATAMOTORS": "1LKG1Gee10lETewmD4NGHuTXfwHMBieM5",
-    "TATASTEEL": "19cP4k4_RtUUNUjGW_7MH1DZp3qlI4a80",
-    "TCS": "1iFrwvO9gm0tO3TqiAIA36n_3qJF3zeLJ",
-    "TECHM": "1qfAI_wPF-MD7rhVZr8ywb4co1EpGh3It",
-    "TITAN": "1GtBNc2Oi6YrSdShmJiV1zO1xOUdezQw3",
-    "ULTRACEMCO": "11gGxBIwv6Z3J24eexq0Oa4L0UdVu1RbV",
-    "UPL": "1uvRzOZbJ7HxNaoHv0gmmsA590oCglMWd",
-    "VEDL": "1SHmVzd3qC49SFj4Czs3i8mKUJRXyjaXW",
-    "WIPRO": "1qxWjqazRTfymCF_Z6FE58pjkl_O6GrS3",
-    "ZEEL": "10ajL8dc10GkUHdmjQTGw10zXYl2ypC3y",
-}
+DATASETS = dict(**HOMEWORK_DATASETS, **WORKSHOP_DATASETS)
