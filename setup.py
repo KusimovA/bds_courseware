@@ -9,8 +9,8 @@ package_name = "bds_courseware"
 
 setuptools.setup(
     name=package_name,
-    version="1.0.3",
+    version="1.0.0",
     install_requires=required,
     packages=setuptools.find_packages(),
-    description="Dataset utilities for Data Science Base course",
+    description="Dataset utilities for EPAM Data Science basic course",
 )

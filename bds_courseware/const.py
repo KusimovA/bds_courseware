@@ -37,11 +37,10 @@ HOMEWORK_DATASETS = {
     "hypothyroid": ("1m53GMGvefv99ZeTOuhjb5wLkTSwfMTCf", "csv"),
     # CLS2
     "movies": ("1ZyCVwksXfp03H4X8wOye6vRD3B3O2YFl", "csv"),
-    # REG2
-    "day": ("1KWMuDmPznwEF5317-yhCdYxjnxFWeFbq", "csv"),
-    "hour": ("1p4azCzZlFR5KZNVa4bG-LrZZtx0lPds1", "csv"),
-    # TS
-    "duq": ("1NTkHmJ5BAgXEMqYok4dLD7FwLGv3bpDK", "csv.zip"),
-    "stock": ("14m4swWIB6hEq7U71YJhaF5-T6mxt9obW", "csv"),
+    # REG2 and TS
+    "bike_sharing_day": ("1KWMuDmPznwEF5317-yhCdYxjnxFWeFbq", "csv"),
+    "bike_sharing_hour": ("1p4azCzZlFR5KZNVa4bG-LrZZtx0lPds1", "csv"),
+    # Clustering
+    "quake": ("1S5stL1xz51y5QkGRHHfWqteacHDYOYXM", "csv")
 }
 DATASETS = dict(**HOMEWORK_DATASETS, **WORKSHOP_DATASETS)
