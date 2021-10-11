@@ -21,6 +21,8 @@ WORKSHOP_DATASETS = {
     "msft_store": ("15mCEE_6GfUXBMLh58zhOYBp6Gfti7TOq", "csv"),
     # STATS
     "sweets": ("1rD-yCS4CJ2qkeBgL-f3ilahatb8pZq2G", "csv"),
+    # OD
+    "breastw": ("1myVQeescRNPOlZiKDAPNv6RXtKHzu1vB", "csv")
 }
 
 HOMEWORK_DATASETS = {
